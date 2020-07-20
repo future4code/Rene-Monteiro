@@ -119,6 +119,7 @@ td button {
     height: 100px;
     
 }
+
 .container-do-table {
     text-align: center; 
     
@@ -126,6 +127,13 @@ td button {
 td img {
     width:60px ;
     height:60px ;
+}
+a button:active {
+    color: white;
+}
+
+a button:hover{
+    background-color: #c44f00;
 }
 
 
