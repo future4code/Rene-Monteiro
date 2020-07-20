@@ -120,11 +120,12 @@ td button {
     
 }
 .container-do-table {
+    text-align: center; 
     
-    text-align: center;
-    
-    
-    
+}
+td img {
+    width:60px ;
+    height:60px ;
 }
 
 
