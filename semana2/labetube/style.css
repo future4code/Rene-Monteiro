@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    display: flex;
+    background-color: orange;
+    height: 15vh;
+    width: 100vw;
+}
+img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    margin-right: 3px;
+}
+header h1 {
+    display: flex;
+    flex: 1;
+    padding-left: 20px;
+    align-items: center;
+   
+    
+}
+header a {
+    text-decoration: none;
+    color: black;
+}
+header form {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    padding-right: 60px;
+    align-items: center;
+}
+form input, form button {
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+section{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 00px;
+}
+section a {
+    border: 1px solid orange;
+    margin: 10px 0px 10px 0px;
+    text-decoration: none;
+    color: black
+
+}
+video {
+    display: flex;
+    height: 25vh;
+    min-width:24vw ;
+    
+     
+}
+h2 {
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    background-color: gray ;
+}
+/**/
+.box-media {
+    display: block;
+    height: 600px;
+}
+.box-media h1 {
+    font-size: 30px;
+
+}
+.box-media video{
+    height: 70vh;
+    width: 100vw;
+
+
+}
+.back-button {
+    width: 70px;
+    height: 3vh;
+
+}
+/*
+*/
+
+@media screen and (min-device-width: 250px ) and (max-device-width: 634px) {
+    header h1 {
+        font-size: 15px;
+    }
+    img {
+        height: 25px;
+        width: 25px;
+    }
+    header {
+        height: 10vh;
+        width: px;
+    }
+    header form {
+        justify-content: flex-end;
+        padding-right: 20px;
+    }
+    input {
+        width: 90px
+    }
+    form input, form button {
+        height: 20px;
+
+    }
+    video {
+        min-width: 90vw;
+    }
+    h3 {
+        font-size:12px;
+    }
+    .box-media video {
+        height: 40vh;
+    }
+   
+
+}
+@media screen and (min-device-width: 635px ) and (max-device-width:768px) {
+    header h1 {
+        font-size: px;
+    }
+    img {
+        height: px;
+        width: px;
+    }
+    input {
+        width: px
+    }
+    form input, form button {
+        height: px;
+
+    }
+    video {
+        min-width: 45vw;
+    }
+    
+
+}
+
