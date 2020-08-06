@@ -1,36 +1,55 @@
 
-let dadosPessoas = {
+// lista de id
 
-    titulo: 'Titulo',
-    autor: "Autor",
-    conteudo: "Conteudo"
+let listaId = ["titulo-post", "autor-post", "conteudo-post"]
 
+let valores = []
+
+function dados () {
+    
+    let assunto = { }
+    
+    // armazenar id na variavel
+
+    for (let i = 0 ; i < listaId.length  ; i ++){
+        
+        valores[i] = document.getElementById(listaId[i])    
+    }
+
+    // armazenar variavel no objeto
+
+    assunto.titulo = valores[0].value
+    assunto.autor = valores[1].value
+    assunto.conteudo = valores[2].value
+    
+    // limpar variavel
+    
+    valores[0].value = ''
+    valores[1].value = ''
+    valores[2].value = ''
+
+    
+   let container = document.getElementById("container-de-posts")
+   
+   //container.innerHTML = ` <p>${assunto.titulo} ${assunto.autor} ${assunto.conteudo}</p>`
+   container.innerHTML += ` <p>${assunto.titulo} </p>`
+   container.innerHTML += ` <p>${assunto.autor}</p>`
+   container.innerHTML += ` <p>${assunto.conteudo}</p>`
+
+
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
-function coletaDados () {
-
-    let meuTitulo = document.getElementById("titulo-post")
-    let meuAutor = document.getElementById('autor-post')
-    let meuConteudo = document.getElementById("conteudo-post")
-    
 
 
-    if (meuTitulo !== '' && meuAutor !== '' && meuConteudo !== '' ) {
-
-        dadosPessoas.titulo = meuTitulo.value
-        meuTitulo.value = ''
 
 
-        dadosPessoas.autor = meuAutor.value
-        meuAutor.value = ''
-
-        dadosPessoas.conteudo = meuConteudo.value
-        meuConteudo.value = ''
-    } 
-    
-}
-let valor = dadosPessoas.titulo
-function publicacao (){
-
-    container-de-posts.innerHTML = `<div> ${valor}</div>`
-} 
