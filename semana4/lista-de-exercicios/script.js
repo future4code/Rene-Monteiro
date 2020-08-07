@@ -25,7 +25,6 @@ armazenamento das variáveis oriundos do arrey numeros.
 vai sobrescrever o valor da variável "numero1". O mesmo acontece no proximo "if" porem com o comparador invertido (maior que) 
 Se o numero for maior que "numero2" ele vai sobrescrever a variável.
 
-*/
 //-Lógica de programação
 
 //1. Utilizando o for, each(), map() e filter()
@@ -33,18 +32,18 @@ Se o numero for maior que "numero2" ele vai sobrescrever a variável.
 let lista = [1,2,3,4,5,6,7,8,9,10]
 
 let callback = function par(elemento, index, array) {
-      if (elemento % 2 == 0){
+    if (elemento % 2 == 0){
           let numero = elemento
           return numero
-      }
+        }
     
-}
-
-let numerosPares = lista.filter(callback)
-console.log(numerosPares)
-
-
-//2. 
+    }
+    
+    let numerosPares = lista.filter(callback)
+    console.log(numerosPares)
+    
+    
+    //2. 
 //a) false
 //b) false
 //c) true
@@ -63,12 +62,12 @@ while(array.length < numero){
         if(i % 2 == 0){
             array.push(i)
         }
-
-
+        
+        
     }
-
-
-
+    
+    
+    
 }
 console.log(array)
 
@@ -77,15 +76,15 @@ console.log(array)
 //4.
 
 function classificaTriangulo(a, b, c){
- 
+    
     if (a == b && a == c ) {
         return `O triangulo é equilatero`
     } else if (a == b && a !== c  || b == c && b !== a || c == a && c !== b) {
-
+        
         return `O triangulo é isósceles`
 
     }else if (a !== b && a !== c ) {
-
+        
         return `o triangulo é escaleno`
     }
 }
@@ -102,7 +101,7 @@ function exercicioCinco(a, b) {
     numeroMaior(a,b) 
     numeroDivisivel(a,b)
     diferenca(a,b)
-
+    
         //i.
         function numeroMaior(a,b) {
                 if (a > b){
@@ -121,7 +120,7 @@ function exercicioCinco(a, b) {
             }
             
         }
-    
+        
         // iii.
         function numeroDivisivel(a, b) {
             if (a % b == 0) {
@@ -137,14 +136,34 @@ function exercicioCinco(a, b) {
         } else  {
             console.log( `${b} NÃO é divisivel por ${a}`)
         }
-    
+        
     }
 
-
+    
 }
 
 
 exercicioCinco(10,200)
+
+
+//-Exercicio de Funções
+//1.
+
+*/
+
+
+
+let aviso = (a) => {return alert("hello Future4")}
+
+console.log(aviso)
+
+
+
+
+
+
+
+
 
 
 
