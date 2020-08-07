@@ -41,8 +41,8 @@
             <h2>Despesas Detalhadas</h2>
             <form action="#">
                 
-                <label for="tipo">Tipo (escolha ao lado)</label>
-                <select name='tipo'id = "tipo">
+                <label for="tipo-despesas">Tipo (escolha ao lado)</label>
+                <select name='tipo-despesas'id = "tipo-despesas">
                     <option value="casa">Casa</option>
                     <option value="viagem">Viagem</option>
                     <option value="outros">Outros</option>
@@ -54,7 +54,7 @@
                 <label for="max">Valor Máximo</label>
                 <input type="number" id="max"> <br>
                 
-                <button type="submit">Filtrar</button>
+                <button onclick="filtro()" type="submit">Filtrar</button>
                 <button type ="submit">Limpar filtros</button>
                 
             </form>
@@ -64,15 +64,15 @@
         <div>
             <h2>Extrato</h2>
             <h3>Valor Total:</h3>
-            <div id= extrato></div>
+            <div id = extrato></div>
                 
                 
         </div >
             
+           
             
             
-            
-        </section>
+    </section>
         
 
 

@@ -22,12 +22,12 @@ function capturarDados () {
         // armazenar variavel no objeto
         
         let despesa = { }
-        despesa.valor = valores[0].value
+        despesa.valor = Number(valores[0].value)
         despesa.tipo = valores[1].value
         despesa.descricao = valores[2].value
     
         novaLista.push(despesa)
-        console.log(novaLista)
+        
         
     } else {
         alert("preencha todos os campos")
@@ -38,10 +38,59 @@ function capturarDados () {
     for (let i = 0; i< valores.length ; i ++){
         valores[i].value = ''
     }
+    //inserirDespesas()
+    console.log(novaLista)
+    
+    
+}
 
-    inserirDespesas()
+
+
+function filtro () {
+    let escolha = document.getElementById("tipo-despesas")
+    let extrato = document.getElementById("extrato")
+
+    
+    function callback(elementoDoArray, index, array) {
+         
+        if (escolha.value === "Casa") {
+
+            extrato.innerHTML += `<p>${elementoDoArray.valor}</p>`
+
+        } else if (escolha.value === 'Viagem'){
+
+            extrato.innerHTML = `<p>${elementoDoArray.valor}</p>`
+
+        } else if (escolha.value === "Outros") {
+            
+            extrato.innerHTML = `<p>${elementoDoArray.valor}</p>`
+        }
+        
+
+        
+    }
+    
+    let respFiltro = novaLista.map(callback)
+
+    console.log(respFiltro)
+    
+    
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     
 function inserirDespesas() {
     let extrato = document.getElementById("extrato")
@@ -55,8 +104,10 @@ function inserirDespesas() {
 
 
 function publi(novaLista) {
-    return `<p> ${novaLista.valor}</p> <p> ${novaLista.tipo}</p> <p> ${novaLista.descricao}</p>`
+    return `<h2> -Lançamento </h2> <p> ${novaLista.valor}</p> 
+    <p> ${novaLista.tipo}</p> 
+    <p> ${novaLista.descricao}</p> <hr> `
 
-}
+}*/
 
 
