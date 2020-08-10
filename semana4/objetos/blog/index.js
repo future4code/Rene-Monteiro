@@ -24,27 +24,19 @@ function dados () {
     
     // limpar variavel
     
-    valores[0].value = ''
-    valores[1].value = ''
-    valores[2].value = ''
-
+     for (let i = 0; i< valores.length ; i ++){
+        valores[i].value = ''
+    }
     
    let container = document.getElementById("container-de-posts")
    
-   //container.innerHTML = ` <p>${assunto.titulo} ${assunto.autor} ${assunto.conteudo}</p>`
+   
    container.innerHTML += ` <p>${assunto.titulo} </p>`
    container.innerHTML += ` <p>${assunto.autor}</p>`
    container.innerHTML += ` <p>${assunto.conteudo}</p>`
 
 
    
-    
-    
-    
-    
-    
-    
-    
     
     
 }
