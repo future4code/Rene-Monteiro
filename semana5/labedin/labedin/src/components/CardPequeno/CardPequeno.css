@@ -1,0 +1,35 @@
+.smallCard-container{
+    display: flex;
+    height: 80px;
+    align-items: center;
+    border: 1px solid black;
+    width: 550px;
+    
+    
+   
+   
+   
+}
+
+
+
+.smallCard-container img {
+    height: 20px;
+    padding-left: 5px;
+    
+    
+}
+
+
+.smallCard-container-2{
+    display: flex;
+    height: 80px;
+    align-items: center;
+    border: 1px solid black;
+    width: 550px;
+    margin-top: 5px;
+    
+   
+   
+   
+}
