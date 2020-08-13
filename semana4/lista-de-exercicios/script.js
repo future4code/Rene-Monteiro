@@ -25,6 +25,7 @@ armazenamento das variáveis oriundos do arrey numeros.
 vai sobrescrever o valor da variável "numero1". O mesmo acontece no proximo "if" porem com o comparador invertido (maior que) 
 Se o numero for maior que "numero2" ele vai sobrescrever a variável.
 
+*/
 //-Lógica de programação
 
 //1. Utilizando o for, each(), map() e filter()
@@ -249,7 +250,8 @@ console.log(anonimizarPessoa(identidade))
 
 
 // Exercícios Funções de Array
-*/
+
+
 
 
 
