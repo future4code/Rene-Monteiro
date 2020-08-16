@@ -25,6 +25,7 @@ armazenamento das variáveis oriundos do arrey numeros.
 vai sobrescrever o valor da variável "numero1". O mesmo acontece no proximo "if" porem com o comparador invertido (maior que) 
 Se o numero for maior que "numero2" ele vai sobrescrever a variável.
 
+*/
 //-Lógica de programação
 
 //1. Utilizando o for, each(), map() e filter()
@@ -149,13 +150,111 @@ exercicioCinco(10,200)
 //-Exercicio de Funções
 //1.
 
-*/
+let lista = [50,22,34,80,15,90,30,94, 60,10,2,115]
+
+function maior (array){
+    let novoMaior = [lista[0]]
+    let m = lista[0]
+    for (x of array) {
+        if (x > m){
+            m = x
+            novoMaior.push(x)
+        }
+    }
+    let indice = novoMaior.length - 2
+    
+    console.log(`${novoMaior[indice]}, \n ${novoMaior}`) 
+    
+}
+
+function menor(array){
+    let novoMenor =[lista[0]]
+    let m = lista[0]
+    for(x of array){
+        if (x < m){
+            m = x
+            novoMenor.push(x)
+        }
+    }
+    let indice = novoMenor.length - 2
+    
+    console.log(`${novoMenor[indice]}, \n ${novoMenor}`)
+    
+    
+}
+
+maior(lista)
+menor(lista)
+
+//2
+let ola = () => { return alert("Hello Future4")}
+
+ola()
+
+// Exercicios de Objetos
+
+//1.
+
+//2.
+
+function criaRetangulo (lado1, lado2){
+    let objetos = {
+        largura:lado1,
+        altura: lado2,
+        perimetro: perim(lado1,lado2),
+        area: ar(lado1, lado2)
+    }
+    return objetos
+}
+function perim(a,b){
+    return 2*(a+b)
+}
+function ar(a,b){
+    return a * b
+}
+console.log(criaRetangulo(2,10))
+
+3.
+
+let filmeFavorito = {
+    titulo: "Vikings",
+    ano: 2015,
+    diretor: "Jose da Silva",
+    ator: ["Joao", " Maria", " João"]
+}
+
+console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano}, dirigito por
+${filmeFavorito.diretor} estrelado por ${filmeFavorito.ator}.`)
+
+4.
+
+let identidade = {
+    nome: "rene",
+    sobrenome: "monteiro",
+    idade: 32
+}
+
+function anonimizarPessoa(identidade){
+    let novaIdentidade = {
+        ...identidade,
+        nome: "Anõnimo",
+        sobrenome: "Anonimo",
+        idade: "Anonimo"
+
+    }
+
+    return novaIdentidade
+}
+
+console.log(anonimizarPessoa(identidade))
+
+
+// Exercícios Funções de Array
 
 
 
-let aviso = (a) => {return alert("hello Future4")}
 
-console.log(aviso)
+
 
 
 
