@@ -9,7 +9,11 @@ import styled from "styled-components"
 
 const Container = styled.div`
 display:flex;
-flex-direction:column;
+flex-direction: column;
+justify-items: center;
+align-items: center;
+
+
 `
 const Button = styled.button`
 `
@@ -17,9 +21,7 @@ const Button = styled.button`
 export default class labeform  extends  React.Component {
   state = {
     etapa:1,
-
   }
-
   renderizaEtapa =() => {
     switch (this.state.etapa) {
       case 1:
@@ -30,14 +32,13 @@ export default class labeform  extends  React.Component {
         return <Etapa3/>;
       case 4:
         return <Final/>;
+      default:
+        return <div></div>
     }
-
   }
   proximaEtapa = () =>{
-    const novoNumero = {
-      etapa: this.state.etapa + 1
-    }
-    this.setState({etapa: novoNumero})
+    const valor = this.state.etapa +1
+    this.setState({etapa: valor})
 
   }
 
