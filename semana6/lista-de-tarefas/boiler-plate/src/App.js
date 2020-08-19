@@ -37,7 +37,7 @@ class App extends React.Component {
   componentDidMount() {
     const usuarioString = localStorage.getItem("tarefas")
     const tarefasObjeto = JSON.parse(usuarioString)
-    this.setState({tarefas: tarefasObjeto})
+    this.setState({tarefas: tarefasObjeto || []})
     
   }
 
