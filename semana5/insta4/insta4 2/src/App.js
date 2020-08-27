@@ -24,11 +24,6 @@ class App extends React.Component {
 
     
   };
-
-
-
-
-
   render() {
     const novoPost = this.state.post.map((publi) => {
       return(
