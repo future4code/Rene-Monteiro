@@ -7,7 +7,7 @@ display:flex;
 flex-direction:column;
 `
 
-export default class App extends React.Component {
+export default class AdicionarMusica extends React.Component {
   state = {
       name:'',
       artist:'',

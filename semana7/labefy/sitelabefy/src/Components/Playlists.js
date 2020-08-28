@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-const Containers = styled.div`
+const Container = styled.div`
   display: flex;
 flex-direction:column
 `;
 
 
-export default class App extends React.Component {
+export default class PlayLists extends React.Component {
   state = {
     playlists: [],
   };
@@ -37,12 +37,12 @@ export default class App extends React.Component {
   };
 
   render() {
-    return <Containers>
+    return <Container>
         <h2>Todas as PlayLists</h2>
         {this.state.playlists.map((lista)=>{
-        return <p >{lista.name}</p>;
+        return <p key={lista.id}>{lista.id}: {lista.name}</p>
         })}
         
-        </Containers>;
+        </Container>;
   }
 }

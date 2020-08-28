@@ -8,7 +8,7 @@ display:flex;
 margin-top:50px;
 
 `
-export default class App extends React.Component {
+export default class CriarPlay extends React.Component {
   state = {
       
       inputPlay:'',
