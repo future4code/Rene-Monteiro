@@ -4,6 +4,7 @@ import Playlists from "./Components/Playlists.js";
 import CriarPlay from "./Components/CriarPlay.js"
 import AdicionarMusica from "./Components/AdicionarMusica.js"
 import DeletarPlay from "./Components/DeletarPlay.js"
+import MusicasPlay from "./Components/MusicasPlay.js"
 
 const Container = styled.div`
   display: flex;
@@ -17,6 +18,7 @@ export default class App extends React.Component {
       <Container>
         <CriarPlay/>
         <Playlists/>
+        <MusicasPlay/>
         <AdicionarMusica/>
         <DeletarPlay/>
       </Container>

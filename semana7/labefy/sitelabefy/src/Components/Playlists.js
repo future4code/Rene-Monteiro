@@ -28,7 +28,7 @@ export default class PlayLists extends React.Component {
         }
       )
       .then((resposta) => {
-        console.log(resposta)
+        
         this.setState({ playlists: resposta.data.result.list});
       })
       .catch((erro) => {
@@ -40,7 +40,13 @@ export default class PlayLists extends React.Component {
     return <Container>
         <h2>Todas as PlayLists</h2>
         {this.state.playlists.map((lista)=>{
-        return <p key={lista.id}>{lista.id}: {lista.name}</p>
+        return (
+          <div key={lista.id}>
+            <p >{lista.id}: {lista.name}</p>
+          
+          </div>
+
+        )
         })}
         
         </Container>;

@@ -32,7 +32,6 @@ export default class CriarPlay extends React.Component {
         })
         .then((resposta)=>{
             this.setState({inputPlay:''})
-           
         })
         .catch((erro)=>{
             console.log(erro)

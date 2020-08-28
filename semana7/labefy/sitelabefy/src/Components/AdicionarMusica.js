@@ -9,38 +9,39 @@ flex-direction:column;
 
 export default class AdicionarMusica extends React.Component {
   state = {
-      name:'',
-      artist:'',
-      url:'',
+      nome:'',
+      artista:'',
+      link:'',
       
   };
 
 onChangeName = (event) =>{
-    this.setState({name:event.target.value})
+    this.setState({nome:event.target.value})
 }
 
 
 onChangeArtist = (event) =>{
-    this.setState({artist:event.target.value})
+    this.setState({artista:event.target.value})
 }
 
  onChangeUrl = (event) =>{
-    this.setState({url:event.target.value})
+    this.setState({link:event.target.value})
  }
   
   AdicionarMusica = () => {
       
       const body = {
-          name:this.state.name,
-          artist:this.state.artist,
-          url:this.state.url
+          name:this.state.nome,
+          artist:this.state.artista,
+          url:this.state.link
       }
-      axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/e8b1518a-658e-4f61-9c74-4a62279c7617/tracks",body,
-      {header: {
-          Authorization: "rene-monteiro-jackson"
+      axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/6a7ad324-714e-4b72-8d8f-5f35a5d562f6/tracks", body,
+      {headers: {
+          Authorization: "rene-monteiro-jackson",
       }})
       .then((resposta) =>{
         console.log(resposta)
+        this.setState({nome:'', artista:'', link:''})
       
       })
       .catch((erro)=>{
@@ -52,15 +53,15 @@ onChangeArtist = (event) =>{
     return (
     <Container>
         <h2>Adicionar Musicas</h2>
-        <form action="#">
-        <input value={this.state.name} onChange={this.onChangeName} placeholder='nome' required/>
-        <input value={this.state.artist} onChange={this.onChangeArtist} placeholder='artist' required/>
-        <input value={this.state.url} onChange={this.onChangeUrl} placeholder='url' required/>
-        <button onClick={this.AdicionarMusica}>Adicionar Musica</button>
+        <form action='#'>
+          <input value={this.state.nome} onChange={this.onChangeName} placeholder='nome' />
+          <input value={this.state.artista} onChange={this.onChangeArtist} placeholder='artist' />
+          <input value={this.state.link} onChange={this.onChangeUrl} placeholder='link' />
+          <button onClick={this.AdicionarMusica}>Adicionar Musica</button>
+
         </form>
-       
+        
     </Container>
     )
   }
 }
-
