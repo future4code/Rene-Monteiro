@@ -15,7 +15,22 @@ left: 90vw;
 `
 
 function App() {
-  const [pagina, setPagina]= useState(1)
+  const [pagina, setPagina]= useState(0)
+
+  const clearList = () =>{
+    const headers = {
+      headers:{
+        "Content-Type": "application/json"
+      }
+    }
+    axios.put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/rene/clear",headers)
+    .then(response =>{
+      console.log(response)
+    })
+    .catch(error=>{
+      console.log(error)
+    })
+  }
   
   const mudarPagina = () =>{
     if (pagina === 0){
@@ -41,7 +56,7 @@ function App() {
   return (
     <Container>
       {paginaAtual()}
-      <Button >Limpar Macthes</Button>
+      <Button onClick={clearList}>Limpar Macthes</Button>
     </Container>
   );
 }

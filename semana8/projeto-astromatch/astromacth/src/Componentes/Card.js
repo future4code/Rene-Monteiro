@@ -48,22 +48,44 @@ width: 100%;
 height: 50vh;
 `
 
+
 function App(props) {
+
+  const [perfil,setPerfil]= useState([])
+
+  useEffect(()=>{
+    escolherPerfil()
+  },[])
+  
+  const escolherPerfil = () =>{
+    axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/rene/person")
+    .then(response =>{
+     setPerfil(response.data.profile)
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+  }
+  
   return (
     <Container>
+     
       <Box>
         <Cabecalho>
-          <Titulo>AstroMacht</Titulo>
+          <Titulo>AstroMatch</Titulo>
           <Button onClick={props.mudarPagina}>Lista de Matches</Button>
         </Cabecalho>
         <Hr></Hr>
         <Perfil>
-            <Imagem src={"https://picsum.photos/200"}/>
-            <h2>Nome, idade</h2>
-            <p>Descrição do perfil aqui</p>
+       <div key ={perfil.id}>
+         <Imagem src={perfil.photo}/>
+        <p>{perfil.name}, {perfil.age}</p>
+        <p>{perfil.bio}</p>
+
+       </div>
         </Perfil>
         <Botoes>
-            <Button>Exluir</Button>
+            <Button onClick={()=> escolherPerfil(perfil.id)}>proximo</Button>
             <Button>Adicionar</Button>
         </Botoes>
       </Box>

@@ -35,20 +35,35 @@ height:1px;
 `
 const Perfil = styled.div`
 display:flex;
-align-items:center;
-background-color: grey;
+flex-direction:column;
+align-items:flex-start;
 height: 10vh;
 `
 const Imagem = styled.img`
-width: 20%;
-height: 90%;
-
-border-radius:50px;
+width: 30%;
+height: 40%;
+border-radius: 20px;
 `
 
 function App(props) {
+  const [perfil,setPerfil]= useState([])
+
+  useEffect(()=>{
+    getMatches()
+  }, [])
+
+  const getMatches = () =>{
+    axios.get ("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/rene/matches")
+    .then(response=>{
+      setPerfil(response.data.matches)
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+  }
   return (
     <Container>
+      {getMatches()}
       <Box>
         <Cabecalho>
           <Button onClick={props.mudarPagina}>Voltar</Button>
@@ -56,8 +71,15 @@ function App(props) {
         </Cabecalho>
         <Hr></Hr>
         <Perfil>
-            <Imagem src={"https://picsum.photos/200"}/>
-            <p>Imagem e nome</p>
+            {perfil.map((pessoa)=>{
+              return(
+                <div key = {pessoa.id}>
+                  <Imagem src={pessoa.photo}/>
+                 <p>{pessoa.name}, {pessoa.age}</p>
+                  <p>{pessoa.bio}</p>
+                </div>
+              )
+            })}
         </Perfil>
       </Box>
     </Container>
