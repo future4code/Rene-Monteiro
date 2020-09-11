@@ -63,7 +63,6 @@ function App(props) {
   }
   return (
     <Container>
-      {getMatches()}
       <Box>
         <Cabecalho>
           <Button onClick={props.mudarPagina}>Voltar</Button>
@@ -75,7 +74,7 @@ function App(props) {
               return(
                 <div key = {pessoa.id}>
                   <Imagem src={pessoa.photo}/>
-                 <p>{pessoa.name}, {pessoa.age}</p>
+                 <p>{pessoa.name} {pessoa.age}</p>
                   <p>{pessoa.bio}</p>
                 </div>
               )

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components"
 import axios from "axios"
 import Card from "./Componentes/Card.js"
@@ -25,7 +25,7 @@ function App() {
     }
     axios.put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/rene/clear",headers)
     .then(response =>{
-      console.log(response)
+      
     })
     .catch(error=>{
       console.log(error)
@@ -38,6 +38,9 @@ function App() {
     } else{
       setPagina(0)
     }
+  }
+  const paginaDois =()=>{
+    setPagina(1)
   }
 
   const paginaAtual = () =>{

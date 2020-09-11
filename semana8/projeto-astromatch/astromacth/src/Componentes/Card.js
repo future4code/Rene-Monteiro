@@ -54,15 +54,35 @@ function App(props) {
   const [perfil,setPerfil]= useState([])
 
   useEffect(()=>{
-    escolherPerfil()
+    exibirPerfil()
   },[])
   
-  const escolherPerfil = () =>{
+  const exibirPerfil = () =>{
     axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/rene/person")
     .then(response =>{
      setPerfil(response.data.profile)
     })
     .catch(error =>{
+      console.log(error)
+    })
+  }
+
+  const escolherPerfil=()=>{
+
+    const body = {
+      id: perfil.id,
+      choice: true
+    }
+    const headers = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }
+    axios.post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/rene/choose-person", body ,headers )
+    .then(response=>{
+      exibirPerfil()
+    })
+    .catch(error=>{
       console.log(error)
     })
   }
@@ -85,8 +105,8 @@ function App(props) {
        </div>
         </Perfil>
         <Botoes>
-            <Button onClick={()=> escolherPerfil(perfil.id)}>proximo</Button>
-            <Button>Adicionar</Button>
+            <Button onClick={()=> exibirPerfil()}>proximo</Button>
+            <Button onClick={()=> escolherPerfil()}>Adicionar</Button>
         </Botoes>
       </Box>
     </Container>
