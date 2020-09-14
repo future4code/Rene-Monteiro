@@ -17,14 +17,17 @@ export default class App extends React.Component {
     }
 
     componentDidMount = () =>{
+      setInterval(()=>{
+
         this.cotacaoMoedas()
+      },10000)
     }
    
   
   cotacaoMoedas = () => {
       axios.get("https://economia.awesomeapi.com.br/json/all/USD-BRL,EUR-BRL")
         .then((resposta)=>{
-            console.log(resposta.data)
+           console.log(resposta)
             this.setState({dolar: resposta.data.USD.ask})
             this.setState({euro: resposta.data.EUR.ask})
         }).catch((erro)=>{
