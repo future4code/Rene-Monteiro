@@ -18,7 +18,9 @@ function LoginPage() {
 
     if(token){
       history.push('/listarviagens')
-    } 
+    } else{
+      history.push('/paginalogin')
+    }
     
 
   },[history])
