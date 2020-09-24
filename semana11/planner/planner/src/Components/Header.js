@@ -17,27 +17,27 @@ export default function Header() {
     const [inputValue, SetInputValue] = useState('')
     const [dayValue, SetDayValue] = useState('')
 
-    const DaysWeek = ["Domingo","Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"]
+    const DaysWeek = ["","Domingo","Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"]
 
     {/*useEffect(()=>{
         CreateTask()
     },[])*/}
 
     const OnChangeInputValue = (event)=>{
-        SetInputValue(event.target.value)
+         SetInputValue(event.target.value) 
     }
 
     const OnChangeDayValue = (event)=>{
-        SetDayValue(event.target.value)
+         SetDayValue(event.target.value) 
     }
 
 
     const CreateTask = ()=>{
+
         const body = {
             text: inputValue,
             day: dayValue
         }
-
         axios.post("https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-Jackson-rene",body)
         .then((response)=>{
             
@@ -53,7 +53,7 @@ export default function Header() {
       <Container>
         <InputButtons >
         <input value={inputValue} onChange={OnChangeInputValue} placeholder='Text'/>
-        <select onChange={OnChangeDayValue} value={dayValue}>
+        <select onChange={OnChangeDayValue} value={dayValue}  >
             
             {DaysWeek.map((days)=>{
                 return <option onChange={OnChangeDayValue} value={days} key={days}>{days}</option>
