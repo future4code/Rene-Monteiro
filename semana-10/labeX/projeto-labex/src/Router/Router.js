@@ -1,10 +1,11 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from "react-router-dom"
-import HomePage from "../Screen/HomePage/HomePage.js"
-import CreateTripPage from "../Screen/CreateTripPage/CreateTripPage"
-import ListTripsPage from "../Screen/ListTripsPage/ListTripsPage"
-import LoginPage from "../Screen/LoginPage/LoginPage"
-import TripdetailsPage from "../Screen/TripDetailsPage/TripDetailsPage"
+import HomePage from "../Screen/HomePage.js"
+import CreateTripPage from "../Screen/CreateTripPage"
+import ListTripsPage from "../Screen/ListTripsPage"
+import LoginPage from "../Screen/LoginPage"
+import TripdetailsPage from "../Screen/TripDetailsPage"
+import Formulario from '../Screen/Formulario.js';
 
 
 
@@ -12,7 +13,7 @@ const  Router =()=> {
   return (
     <BrowserRouter>
     <Switch>
-    <Route exact path ='/home'>
+    <Route exact path ='/'>
       <HomePage />
     </Route>
     <Route exact path ='/criarviagem'>
@@ -26,6 +27,9 @@ const  Router =()=> {
     </Route>
     <Route exact path ='/detalhesdeviagens'>
       <TripdetailsPage />
+    </Route>
+    <Route exact path ='/formulario'>
+      <Formulario />
     </Route>
     <Route>
       <div>Erro 404</div>
