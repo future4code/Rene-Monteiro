@@ -1,15 +1,16 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from "react-router-dom"
-import Router from './Router/Router.js'
-import LoginPage from './Screen/LoginPage.js';
+import { ThemeProvider } from "@chakra-ui/core";
+import FormularioInscricao from './Paginas/FormularioInscricao';
+import Home from './Paginas/Home'
+import Rotas from './Rotas/Rotas'
 
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <Router/>
-    </div>
-  );
+    <ThemeProvider >
+      <Rotas  />
+    </ThemeProvider>
+  )
 }
 
-export default App;
+
