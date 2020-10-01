@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from "styled-components"
 import { useHistory } from 'react-router-dom'
 import { GoToLoginPage }  from '../Router/GoToPages'
@@ -25,6 +25,12 @@ export default function RegisterForm() {
   const [inputPassword, setInputPassword] = useState('')
   const history = useHistory()
 
+  useEffect(()=>{
+    const token = localStorage.getItem("token")
+
+    token && history.push("/postlists")
+  })
+
   const onChangeNome=(event)=>{
     setInputNome(event.target.value)
   }
@@ -45,6 +51,7 @@ export default function RegisterForm() {
     axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labEddit/signup", body)
     .then((response)=>{
       console.log(response)
+      localStorage.setItem("token", response.data.token)
       setInputNome('')
       setInputPassword('')
       setInputEmail('')
