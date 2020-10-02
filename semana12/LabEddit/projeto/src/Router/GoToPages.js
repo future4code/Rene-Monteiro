@@ -6,8 +6,8 @@ export const GoToPostLists = (history)=>{
     history.push("/postlists")
 }
 
-export const GoToPostPage = (history)=>{
-    history.push("postpage")
+export const GoToPostPage = (history, id)=>{
+    history.push(`postpage/${id}`)
 }
 
 export const GoToRegisterPage = (history)=>{

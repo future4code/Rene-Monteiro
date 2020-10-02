@@ -19,7 +19,7 @@ export default function Router(){
                 <PostLists />
             </Route>
 
-            <Route exact path="/postpage">
+            <Route exact path="/postpage/:id">
                 <PostPage />
             </Route>
 
