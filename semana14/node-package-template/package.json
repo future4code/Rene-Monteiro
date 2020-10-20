@@ -1,0 +1,21 @@
+{
+  "name": "package-template",
+  "version": "1.0.0",
+  "description": "exercicios node",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js",
+    "soma" : "node index.js 'add'",
+    "subtracao" : "node index.js 'sub'",
+    "multiplicacao" : "node index.js 'mult'",
+    "divisao" : "node index.js 'div'"
+  },
+  "keywords": [
+    "nice",
+    "pumpkin",
+    "machete"
+  ],
+  "author": "rene",
+  "license": "ISC"
+}
