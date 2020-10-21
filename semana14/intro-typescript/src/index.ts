@@ -39,33 +39,76 @@ const usuario3 : pessoa = {
 const usuarios : pessoa[] = [usuario1,usuario2,usuario3]
 
 EXERCICIO 02
-*/
 
-type Ordenacao = {
+type Estatistica = {
     maior:number,
     menor:number,
     media:number
 }
+type Numeros = number[]
 
-function obterEstatisticas(numeros:number): Ordenacao {
 
+
+function obterEstatisticas(numeros: number[]) : Estatistica {
+    
     const numerosOrdenados = numeros.sort(
-        (a:number, b:number) => a - b
+        (a, b) => a - b
     )
-
-    let soma = 0
-
-    for (let num of numeros) {
-        soma += num
-    }
-
-    const estatisticas : Ordenacao = {
-        maior: numerosOrdenados[numeros.length - 1],
-        menor: numerosOrdenados[0],
-        media: soma / numeros.length
-    }
-
-    return estatisticas
+        
+        let soma = 0
+        
+        for (let num of numeros) {
+            soma += num
+        }
+        
+        const estatisticas : Estatistica = {
+            maior: numerosOrdenados[numeros.length - 1],
+            menor: numerosOrdenados[0],
+            media: soma / numeros.length
+        }
+        
+        return estatisticas
 }
+    
+    
+const amostraDeIdades : Numeros = [10,50,5,20,30,40]
 
 
+
+console.log(obterEstatisticas(amostraDeIdades))
+
+EXERCICIO 03
+*/
+  
+   
+type post = 
+    {
+        autor: string,
+        texto:string
+    }
+
+
+const posts : post[] = [
+    {
+        autor: "Alvo Dumbledore",
+        texto: "Não vale a pena viver sonhando e se esquecer de viver"
+    },
+    {
+        autor: "Severo Snape",
+        texto: "Menos 10 pontos para Grifinória!"
+    },
+    {
+        autor: "Hermione Granger",
+        texto: "É levi-ô-sa, não levio-sá!"
+    },
+    {
+        autor: "Dobby",
+        texto: "Dobby é um elfo livre!"
+    },
+    {
+        autor: "Lord Voldemort",
+        texto: "Avada Kedavra!"
+    }
+]
+
+console.table(posts)
