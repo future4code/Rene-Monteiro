@@ -26,7 +26,7 @@ app.use(cors())
 
 app.get("/users/all", getAllUsers);
 app.get("/users/search", searchByName);
-app.get("/users/functions/", searchByFunctions);
+app.get("/users/functions/:type", searchByFunctions);
 
 const server = app.listen(process.env.PORT || 3003, () => {
    if (server) {
