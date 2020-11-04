@@ -4,7 +4,7 @@ import { filterName } from '../data/filterName'
 
 export const searchByName = async(req:Request, res: Response) => {
     try {
-        const name = req.query.name as string
+        const name = (req.query.name as string).toLowerCase()
 
         if(!name ) {
             throw new Error("Insira um nome")

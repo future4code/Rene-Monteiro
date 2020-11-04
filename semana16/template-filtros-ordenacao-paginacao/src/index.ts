@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import { AddressInfo } from "net";
 import { getAllUsers }  from "./endpoints/getAllUsers";
 import { searchByName } from "./endpoints/searchByName";
+import { searchByFunctions } from './endpoints/searchByFunctions' 
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use(cors())
 
 app.get("/users/all", getAllUsers);
 app.get("/users/search", searchByName);
+app.get("/users/functions/", searchByFunctions);
 
 const server = app.listen(process.env.PORT || 3003, () => {
    if (server) {
