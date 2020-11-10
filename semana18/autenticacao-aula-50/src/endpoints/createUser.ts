@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import insertUser from "../data/insertUser";
+import { generateToken } from "../services/authenticator";
 import { generatedId } from "../services/idGenerator";
 
 export default async function createUser(
@@ -11,9 +12,10 @@ export default async function createUser(
         if (
             !req.body.name ||
             !req.body.nickname ||
-            !req.body.email
+            !req.body.email ||
+            !req.body.senha
         ) {
-          throw new Error('Preencha os campos "name","nickname" e "email"')
+          throw new Error('Preencha os campos "name","nickname", "email" e "senha"')
         }
 
         const id: string = generatedId()
@@ -22,12 +24,13 @@ export default async function createUser(
             id,
             req.body.name,
             req.body.nickname,
-            req.body.email
+            req.body.email,
+            req.body.senha
         )
 
-        res
-            .status(200)
-            .send('Usuário criado com sucesso!')
+        const token : string  = generateToken({id})
+
+        res.status(201).send({message: "Usuário criado", token })
 
     } catch (error) {
         res.status(400).send({

@@ -1,11 +1,16 @@
 import { Request, Response } from "express";
 import updateUser from "../data/updateUser";
+import { AuthenticationData, getTokenData } from "../services/authenticator";
 
 export default async function editUser(
    req: Request,
    res: Response
 ) {
    try {
+
+      const token:string = req.headers.authorization as string
+      const tokenData: AuthenticationData = getTokenData(token)
+
       if (
          req.body.name === '' ||
          req.body.nickname === '' ||
@@ -19,7 +24,7 @@ export default async function editUser(
       }
 
       await updateUser(
-         req.params.id,
+         tokenData.id,
          req.body.name,
          req.body.nickname,
          req.body.email

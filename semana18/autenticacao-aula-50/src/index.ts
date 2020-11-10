@@ -7,6 +7,9 @@ import getUserById from './endpoints/getUserById'
 import editUser from './endpoints/editUser'
 import createTask from './endpoints/createTask'
 import getTaskById from './endpoints/getTaskById'
+import { generatedId } from './services/idGenerator'
+import { generateToken } from './services/authenticator'
+import login from './endpoints/login'
 
 dotenv.config()
 
@@ -26,9 +29,10 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.put('/user', createUser)
+app.post("/user/login", login)
+app.post('/user/signup', createUser)
 app.get('/user/:id', getUserById)
-app.post('/user/:id/edit', editUser)
+app.post('/user/edit', editUser)
 
 app.put('/task', createTask)
 app.get('/task/:id', getTaskById)
