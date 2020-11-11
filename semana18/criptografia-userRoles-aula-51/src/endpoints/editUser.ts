@@ -11,6 +11,10 @@ export default async function editUser(
       const token:string = req.headers.authorization as string
       const tokenData: AuthenticationData = getTokenData(token)
 
+      if(tokenData.role != 'ADMIN') {
+         res.statusCode = 401
+         throw new Error("Não autorizado")
+      }
       if (
          req.body.name === '' ||
          req.body.nickname === '' ||

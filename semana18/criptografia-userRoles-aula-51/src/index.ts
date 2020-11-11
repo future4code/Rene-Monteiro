@@ -7,8 +7,6 @@ import getUserById from './endpoints/getUserById'
 import editUser from './endpoints/editUser'
 import createTask from './endpoints/createTask'
 import getTaskById from './endpoints/getTaskById'
-import { generatedId } from './services/idGenerator'
-import { generateToken } from './services/authenticator'
 import login from './endpoints/login'
 
 dotenv.config()

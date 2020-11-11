@@ -1,3 +1,4 @@
+import { compare } from '../services/hashManage'
 import {Request, Response} from 'express'
 import { selectUserByEmail, User } from '../data/selectUserByEmail'
 import { generateToken } from '../services/authenticator'
@@ -20,13 +21,15 @@ export default async function login(req:Request, res:Response): Promise<void> {
             throw new Error(message)
         }
 
-        if(user.senha !== senha){
+        const passwordIsCorrect: boolean = await compare(senha, user.senha)
+
+        if(!passwordIsCorrect){
             res.statusCode = 401
             message = "não autorizado"
             throw new Error(message)
         }
 
-        const token:string = generateToken({id: user.id})
+        const token:string = generateToken({id: user.id, role:user.role})
 
         res.send({message, token})
 

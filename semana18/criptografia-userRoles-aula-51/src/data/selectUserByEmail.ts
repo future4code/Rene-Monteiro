@@ -1,11 +1,13 @@
 import {connection} from '..'
+import { user_roles } from './insertUser'
 
 export type User = {
     id: string,
     name: string,
     nickname: string,
     email: string,
-    senha: string
+    senha: string,
+    role: user_roles,
 }
 
 export async function selectUserByEmail (email : string): Promise<User> {
@@ -26,8 +28,8 @@ export async function selectUserByEmail (email : string): Promise<User> {
             name: result[0][0].name,
             nickname: result[0][0].nickname,
             email: result[0][0].email,
-            senha: result[0][0].senha
-
+            senha: result[0][0].senha,
+            role: result[0][0].role
         }
         
     } catch (error) {

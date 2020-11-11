@@ -1,8 +1,10 @@
 import * as jwt from 'jsonwebtoken'
+import { user_roles } from '../data/insertUser'
 
 
 export type AuthenticationData = {
-    id: string
+    id: string,
+    role: user_roles
 }
 
 //recebe um objeto como parametro e retorna uma string
