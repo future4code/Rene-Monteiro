@@ -8,6 +8,7 @@ import editUser from './endpoints/editUser'
 import createTask from './endpoints/createTask'
 import getTaskById from './endpoints/getTaskById'
 import login from './endpoints/login'
+import { resetPassword } from './endpoints/resetPassword'
 
 dotenv.config()
 
@@ -31,6 +32,7 @@ app.post("/user/login", login)
 app.post('/user/signup', createUser)
 app.get('/user/:id', getUserById)
 app.post('/user/edit', editUser)
+app.get('/user/password/reset', resetPassword)
 
 app.put('/task', createTask)
 app.get('/task/:id', getTaskById)
